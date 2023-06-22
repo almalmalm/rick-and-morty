@@ -1,13 +1,13 @@
 import Button from './components/Button';
 import Header from './components/Header';
-import Promo from './components/Promo';
+import Wallpaper from './components/Wallpaper';
 
 function App() {
   return (
     <>
       <Header />
-      <Button />
-      <Promo />
+      <Button text="Episodes" />
+      <Wallpaper />
     </>
   );
 }

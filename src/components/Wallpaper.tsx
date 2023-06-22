@@ -1,4 +1,4 @@
-function Promo() {
+function Wallpaper() {
   if (window.innerWidth < 767) {
     return (
       <div
@@ -22,4 +22,4 @@ function Promo() {
   }
 }
 
-export default Promo;
+export default Wallpaper;
