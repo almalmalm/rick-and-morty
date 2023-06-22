@@ -24,6 +24,17 @@ function Header() {
         >
           <BiX className="w-8 h-8 text-zinc-700" />
         </div>
+        <div className="absolute font-bold right-32 mt-32 text-zinc-700 text-2xl flex flex-col gap-8">
+          <div>
+            <a href="/characters">Characters</a>
+          </div>
+          <div>
+            <a href="/locations">Locations</a>
+          </div>
+          <div>
+            <a href="/episodes">Episodes</a>
+          </div>
+        </div>
       </div>
 
       <div className="flex text-[#fbfcff] my-4 items-center justify-between absolute w-full">
