@@ -1,6 +1,8 @@
-import { BiSearchAlt2, BiX } from 'react-icons/bi';
-import Menu from './Menu';
+import { BiSearchAlt2 } from 'react-icons/bi';
+import MenuButton from './MenuButton';
 import { useState } from 'react';
+import CloseButton from './CloseButton';
+import MenuItems from './MenuItems';
 
 function Header() {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
@@ -16,38 +18,23 @@ function Header() {
           menuIsOpened && 'w-screen tablet:w-1/2'
         }`}
       >
-        <div
-          className="absolute right-0 mt-8 mr-6 cursor-pointer"
-          onClick={() => {
-            menuHandler(menuIsOpened);
-          }}
-        >
-          <BiX className="w-8 h-8 text-zinc-700" />
-        </div>
-        <div className="absolute font-bold right-32 mt-32 text-zinc-700 text-2xl flex flex-col gap-8">
-          <div>
-            <a href="/characters">Characters</a>
-          </div>
-          <div>
-            <a href="/locations">Locations</a>
-          </div>
-          <div>
-            <a href="/episodes">Episodes</a>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex text-[#fbfcff] my-4 items-center justify-between absolute w-full">
-        <Menu
+        <CloseButton
           onClick={() => {
             menuHandler(menuIsOpened);
           }}
         />
-        <div>
-          <a href="/">
-            <img src="/rick-and-morty.png" alt="Logo" className="w-16" />
-          </a>
-        </div>
+        <MenuItems />
+      </div>
+
+      <div className="flex text-[#fbfcff] my-4 items-center justify-between absolute w-full">
+        <MenuButton
+          onClick={() => {
+            menuHandler(menuIsOpened);
+          }}
+        />
+        <a href="/">
+          <img src="/rick-and-morty.png" alt="Logo" className="w-16" />
+        </a>
         <div className="mr-6">
           <BiSearchAlt2 className="w-6 h-6" />
         </div>
