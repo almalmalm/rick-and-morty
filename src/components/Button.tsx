@@ -1,12 +1,12 @@
 import React from 'react';
 
-type ButtonProps = {
+type Props = {
   text: string;
   onClick: () => void;
   color: string;
 };
 
-const Button: React.FC<ButtonProps> = ({ text, onClick, color }) => {
+const Button: React.FC<Props> = ({ text, onClick, color }) => {
   return (
     <button
       className={`absolute bottom-8 left-0 right-0 mr-auto ml-auto text-[${color}] w-64 border-2 rounded h-14 font-semibold

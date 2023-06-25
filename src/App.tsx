@@ -37,7 +37,7 @@ function App() {
     <div className=" bg-[#04061c] tablet:bg-[#1c1f1a]">
       {!character && (
         <>
-          <Header />
+          <Header position="absolute" />
           {characterName && (
             <Button
               text={characterName}
@@ -52,14 +52,8 @@ function App() {
       )}
       {character && characterImg && characterName && (
         <>
+          <Header position="relative" />
           <Character img={characterImg} name={characterName} />
-          <Button
-            text="Back"
-            color="#fbfcff"
-            onClick={() => {
-              characterHandler(character);
-            }}
-          />
         </>
       )}
     </div>

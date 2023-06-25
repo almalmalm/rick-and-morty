@@ -4,7 +4,11 @@ import { useState } from 'react';
 import CloseButton from './CloseButton';
 import MenuItems from './MenuItems';
 
-function Header() {
+type Props = {
+  position: string;
+};
+
+const Header: React.FC<Props> = ({ position }) => {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
 
   const menuHandler = (status: boolean) => {
@@ -26,7 +30,9 @@ function Header() {
         <MenuItems />
       </div>
 
-      <div className="flex text-[#fbfcff] my-4 items-center justify-between absolute w-full">
+      <div
+        className={`flex text-[#fbfcff] py-4 items-center justify-between ${position} w-full`}
+      >
         <MenuButton
           onClick={() => {
             menuHandler(menuIsOpened);
@@ -41,6 +47,6 @@ function Header() {
       </div>
     </>
   );
-}
+};
 
 export default Header;
