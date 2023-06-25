@@ -7,7 +7,7 @@ type Props = {
 
 const CloseButton: React.FC<Props> = ({ onClick }) => {
   return (
-    <div className="absolute right-0 mt-8 mr-6 cursor-pointer">
+    <div className="absolute right-0 mt-8 mr-6 cursor-pointer ">
       <BiX className="w-8 h-8 text-zinc-700" onClick={onClick} />
     </div>
   );

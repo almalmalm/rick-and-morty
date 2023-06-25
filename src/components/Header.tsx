@@ -1,8 +1,9 @@
-import { BiSearchAlt2 } from 'react-icons/bi';
 import MenuButton from './MenuButton';
 import { useState } from 'react';
 import CloseButton from './CloseButton';
 import MenuItems from './MenuItems';
+import Search from './Search';
+import SearchModal from './SearchModal';
 
 type Props = {
   position: string;
@@ -10,9 +11,14 @@ type Props = {
 
 const Header: React.FC<Props> = ({ position }) => {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
+  const [searchIsOpened, setSearchIsOpened] = useState(false);
 
   const menuHandler = (status: boolean) => {
     setMenuIsOpened(!status);
+  };
+
+  const searchHandler = (status: boolean) => {
+    setSearchIsOpened(!status);
   };
 
   return (
@@ -41,9 +47,20 @@ const Header: React.FC<Props> = ({ position }) => {
         <a href="/">
           <img src="/rick-and-morty.png" alt="Logo" className="w-16" />
         </a>
-        <div className="mr-6">
-          <BiSearchAlt2 className="w-6 h-6" />
-        </div>
+        {searchIsOpened && (
+          <div className="absolute top-0 z-20">
+            <SearchModal
+              onClick={() => {
+                searchHandler(searchIsOpened);
+              }}
+            />
+          </div>
+        )}
+        <Search
+          onClick={() => {
+            searchHandler(searchIsOpened);
+          }}
+        />
       </div>
     </>
   );
