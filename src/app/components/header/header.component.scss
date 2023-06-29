@@ -1,4 +1,9 @@
 .header {
   display: flex;
   justify-content: space-between;
+  height: 64px;
+  align-items: center;
+  img {
+    height: 64px;
+  }
 }
