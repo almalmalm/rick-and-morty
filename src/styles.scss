@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: url(./assets/rick-and-morty-wallpaper.png) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
